@@ -18,7 +18,10 @@
     </header>
     <main class="center">
         <form action="submit" onsubmit="Form.submit(event)">
+            <label for="note">Note text:</label>
             <input type="text" name="text" id="note" autocomplete="off" required>
+            <label for="note-color">Note color:</label>
+            <input type="color" name="note-color" id="note-color" value="#ffffff">
             <button type="submit" onclick="Utils.removeErrorBox()">Add note</button>
         </form>
         <div class="notes-diplay">

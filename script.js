@@ -25,6 +25,7 @@ const DOM = {
         const li = document.createElement("li");
         li.innerHTML = DOM.innerHTMLNote(note, index);
         li.dataset.index = index;
+        li.setAttribute("style", `background-color: ${note.color}`)
         DOM.notesContainer.appendChild(li);
     },
     innerHTMLNote(note, index) {
@@ -52,10 +53,12 @@ const Utils = {
 
 const Form = {
     textInput: document.querySelector("input#note"),
+    colorInput: document.querySelector("input#note-color"),
     getValues() {
         return {
             text: Form.textInput.value,
             date: Utils.formatDate(),
+            color: Form.colorInput.value
         };
     },
     validateField() {
