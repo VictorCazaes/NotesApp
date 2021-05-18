@@ -16,24 +16,15 @@ main {
   flex-direction: column;
   padding: 1rem;
 }
-form {
-  width: 50vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 2rem;
-}
-#note {
-  padding: 0.2rem;
-  border-radius: 0.3rem;
-}
-form button {
+#create-note {
   background-color: inherit;
-  height: 1.8rem;
-  width: 5rem;
+  height: 3rem;
+  width: 4rem;
   border-radius: 0.3rem;
+  margin-bottom: 2rem;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
 }
-form button:hover {
+button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
@@ -43,31 +34,48 @@ form button:hover {
 li {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   padding: 0.5rem;
   width: 70vw;
   border-radius: 0.2rem;
   margin-bottom: 1rem;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
 }
 .text-area p {
   font-size: 1.2rem;
+  padding: 0.4rem;
 }
-.text-area span {
+.note-topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: inherit;
+  border-bottom: 1px solid black;
+}
+.note-topbar span {
   font-size: 0.7rem;
+  opacity: 0.9;
+}
+label:hover {
+  cursor: pointer;
   opacity: 0.8;
 }
-.remove-area {
-  margin-left: 1rem;
+.note-color {
+  width: 0.5rem;
+  border: none;
+  background-color: inherit;
+  visibility: hidden;
 }
-.remove-area button {
+.note-topbar button {
   background-color: inherit;
   border: none;
   outline: none;
-  width: 1.5rem;
 }
-.remove-area button:hover {
+.note-topbar button:hover {
   cursor: pointer;
-  color: #e5e5e5;
+  opacity: 0.8;
 }
 footer {
   flex-direction: column;
