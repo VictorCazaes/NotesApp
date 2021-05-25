@@ -32,6 +32,10 @@ const DOM = {
         li.dataset.index = index;
         li.setAttribute("style", `background-color: ${note.color}`);
         DOM.notesContainer.appendChild(li);
+        const textTitle = document.querySelector("#text-title");
+        textTitle.textContent = note.title;
+        const textBody = document.querySelector("#text-body");
+        textBody.textContent = note.text;
     },
     innerHTMLNote(note, index) {
         const html = `
@@ -44,8 +48,8 @@ const DOM = {
             </div>
         </div>
         <div class="text-area">
-            <h1 contenteditable="true" onfocusout="Notes.edit(this.textContent, '${note.text}', ${index}, '${note.color}')">${note.title}</h1>
-            <p contenteditable="true" onfocusout="Notes.edit('${note.title}', this.textContent, ${index}, '${note.color}')">${note.text}</p>
+            <h1 id="text-title" contenteditable="true" onfocusout="Notes.edit(this.textContent, '${note.text}', ${index}, '${note.color}')"></h1>
+            <p id="text-body" contenteditable="true" onfocusout="Notes.edit('${note.title}', this.textContent, ${index}, '${note.color}')"></p>
         </div>
         `;
         return html;
